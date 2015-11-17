@@ -6,7 +6,7 @@ return array(
         'DoctrineORMModule',
         'Dh',
         'Base',
-        'User','Web','Api','Message',
+        'User',
         
     ),
 
