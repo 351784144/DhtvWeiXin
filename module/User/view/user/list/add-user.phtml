@@ -3,7 +3,7 @@ $form = $this->form;
 $userRoleList = $this->userRoleList;
 ?>
 
-<form
+<form id="form" 
 	action="<?php echo $this->url('User',['controller'=>'list','action'=>'addUser'])?>"
 	method="post">
 	<table>
@@ -26,12 +26,8 @@ $userRoleList = $this->userRoleList;
    </select></td>
 		</tr>
 		<tr>
-		    <td><input type="submit" name="submit" value="保存" /></td>
+		    <td><input type="button" onclick="addSubmit()" name="submit" value="保存" /></td>
 		</tr>
 		</table>
 </form>
 
-<script type="text/javascript">
-
-    
-</script>

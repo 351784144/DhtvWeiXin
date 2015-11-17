@@ -39,7 +39,53 @@
 
 
 <script>
+var addLayerIndex;
+var editLayerIndex;
 
+function addSubmit(){
+		$.ajax({
+			url:'<?php echo $this->url('User',['controller'=>'list','action'=>'addUser'])?>',
+			type:'POST',
+			data: $('#form').serialize(),
+			success : function(data){
+				     var result = JSON.parse(data);
+				 	if(result.status=='fail'){
+						layer.msg(result.msg);
+					
+						}
+					else if(result.status=='success'){
+						layer.msg(result.msg);
+						layer.close(addLayerIndex);
+						location.reload();
+						}
+					
+					
+					
+				}
+			});
+		}
+function editSubmit(){
+	$.ajax({
+		url:'<?php echo $this->url('User',['controller'=>'list','action'=>'editUser'])?>',
+		type:'POST',
+		data: $('#form').serialize(),
+		success : function(data){
+			    var result = JSON.parse(data);
+			 	if(result.status=='fail'){
+					layer.msg(result.msg);
+				
+					}
+				else if(result.status=='success'){
+					layer.msg(result.msg);
+					layer.close(editLayerIndex);
+					location.reload();
+					}
+				
+				
+				
+			}
+		});
+	}
 function delect(i){
 	var id = $('#id'+i).text();
 	 layer.open({
@@ -72,7 +118,7 @@ function edit(i){
 	$.ajax({
 		url:'<?php echo $this->url('User',['controller'=>'list','action'=>'editUser'])?>?userId='+id,
 		success : function(data){
-			 layer.open({
+			editLayerIndex =  layer.open({
 			    	type:1,
 			        area: ['600px', '360px'],
 			  //      shadeClose: true, //点击遮罩关闭
@@ -90,7 +136,7 @@ $('#addUser').on('click', function(){
 	$.ajax({
 		url:'<?php echo $this->url('User',['controller'=>'list','action'=>'addUser'])?>',
 		success : function(data){
-			 layer.open({
+			addLayerIndex =  layer.open({
 			    	type:1,
 			        area: ['600px', '360px'],
 			  //      shadeClose: true, //点击遮罩关闭
@@ -101,5 +147,6 @@ $('#addUser').on('click', function(){
 		
 	
 });
+
 
 </script>
