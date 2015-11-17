@@ -6,7 +6,7 @@ return array(
         'DoctrineORMModule',
         'Dh',
         'Base',
-        'User',
+        'User','Web','Message','Api'
         
     ),
 
@@ -18,7 +18,7 @@ return array(
         // Module class.
         'module_paths' => array(
             './module',
-            './vendor',
+            './vendor','./module','./module','./module','./module','./module',
         ),
 
         // An array of paths from which to glob configuration files after
