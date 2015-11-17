@@ -34,7 +34,7 @@ return [
             'User' => [
                 'type' => 'Segment',
                 'options' => [
-                    'route' => '/DH/user[/:controller][/:action][/:id]',
+                    'route' => '/Web/user[/:controller][/:action][/:id]',
                     'defaults' => [
                         '__NAMESPACE__' => 'User\Controller',
                         'controller' => 'User',

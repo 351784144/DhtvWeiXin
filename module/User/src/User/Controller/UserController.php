@@ -78,7 +78,7 @@ class UserController extends AbstractActionController
                         'roleKey' => null!==$user->getRole()?$user->getRole()->getRoleKey():''
                     ];
                     setcookie('DH_user', json_encode($DHUser, JSON_UNESCAPED_UNICODE), time() + 3600 * 24 * 7, "/");
-                    return $this->redirect()->toRoute('DH');
+                    return $this->redirect()->toRoute('Web');
                 }
             }
         }
