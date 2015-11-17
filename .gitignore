@@ -43,6 +43,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 /config/
+<<<<<<< HEAD
 =======
 # Windows image file caches
 Thumbs.db
@@ -99,3 +100,6 @@ config/autoload/global.php
 config/autoload/doctrine.local.php
 
 config/autoload/global.php
+=======
+/.settings/
+>>>>>>> origin/master
