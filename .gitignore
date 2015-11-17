@@ -13,7 +13,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-config/
+
 # Windows shortcuts
 *.lnk
 
@@ -41,3 +41,4 @@ config/
 Network Trash Folder
 Temporary Items
 .apdisk
+/config/

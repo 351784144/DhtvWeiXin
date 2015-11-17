@@ -91,8 +91,7 @@ class ListController extends AbstractActionController
         ]);
         
         
-        $layout=$this->layout();
-        $layout->setTemplate('layout/JsLayout');
+        $view->setTerminal(true);
         return $view;
     }
     
@@ -150,8 +149,7 @@ class ListController extends AbstractActionController
             'userRoleList' => $userRoleList
         ]);
         
-        $layout=$this->layout();
-        $layout->setTemplate('layout/JsLayout');
+        $view->setTerminal(true);
         return $view;
     }
 }

@@ -68,30 +68,44 @@ function delect(i){
 
 function edit(i){
 	var id = $('#id'+i).text();
-	 layer.open({
-	        type: 2,
-	        area: ['600px', '360px'],
-	  //      shadeClose: true, //点击遮罩关闭
-	        content: '<?php echo $this->url('User',['controller'=>'list','action'=>'editUser'])?>?userId='+id,
-	        end : function(){
-				location.reload();
-		        }
-	    });
+
+	$.ajax({
+		url:'<?php echo $this->url('User',['controller'=>'list','action'=>'editUser'])?>?userId='+id,
+		success : function(data){
+			 layer.open({
+			    	type:1,
+			        area: ['600px', '360px'],
+			  //      shadeClose: true, //点击遮罩关闭
+			        content: data,
+			        end : function(){
+						location.reload();
+				        }
+			    });
+			}
+		});
+	
 
 }
 
 
 $('#addUser').on('click', function(){
 
-	 layer.open({
-	        type: 2,
-	        area: ['600px', '360px'],
-	//       shadeClose: true, //点击遮罩关闭
-	        content: '<?php echo $this->url('User',['controller'=>'list','action'=>'addUser'])?>',
-	        end : function(){
-				location.reload();
-		        }
-	    });
+	$.ajax({
+		url:'<?php echo $this->url('User',['controller'=>'list','action'=>'addUser'])?>',
+		success : function(data){
+			 layer.open({
+			    	type:1,
+			        area: ['600px', '360px'],
+			  //      shadeClose: true, //点击遮罩关闭
+			        content: data,
+			        end : function(){
+						location.reload();
+				        }
+			    });
+			}
+		});
+		
+	
 });
 
 </script>
