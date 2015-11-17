@@ -71,15 +71,24 @@ class ListController extends AbstractActionController
               
                 $user->setRole($role);
                 if($userDao->findOneBy(['username'=>$user->getUsername()])){
-                    exit("用户名已存在");
+                      $json = new Json();
+                      $json->setStatus('fail');
+                      $json->setMsg('用户名已存在！');
+                      exit(json_encode(Helper::extractByGetMethod($json)));
                 }
                 try {
                     $userDao->save($user);
                 } catch (\Exception $e) {
-                    exit("保存失败".$e->getMessage());
+                    $json = new Json();
+                    $json->setStatus('fail');
+                    $json->setMsg("保存失败".$e->getMessage());
+                    exit(json_encode(Helper::extractByGetMethod($json)));
+                   
                 }
-                 
-                exit("保存成功");
+                $json = new Json();
+                $json->setStatus('success');
+                $json->setMsg("保存成功");
+                exit(json_encode(Helper::extractByGetMethod($json)));             
     
             }
         }
@@ -131,15 +140,26 @@ class ListController extends AbstractActionController
                 try {
                     $userDao->save($user);
                 } catch (\Exception $e) {
-                    exit("保存失败");
+                    $json = new Json();
+                    $json->setStatus('fail');
+                    $json->setMsg("保存失败");
+                    exit(json_encode(Helper::extractByGetMethod($json)));
+              
                 }
                  
-                exit("保存成功");
+                  $json = new Json();
+                  $json->setStatus('success');
+                  $json->setMsg("保存成功");
+                  exit(json_encode(Helper::extractByGetMethod($json)));
     
             }
         }
         else {
-            exit("参数错误");
+            $json = new Json();
+            $json->setStatus('fail');
+            $json->setMsg("参数错误");
+            exit(json_encode(Helper::extractByGetMethod($json)));
+         
         }
        
         $userRoleList = $userRoleDao->getRoleNotIsSuperAdmin();
