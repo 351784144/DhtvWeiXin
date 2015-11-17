@@ -94,12 +94,7 @@ config/autoload/global.php
 
 config/autoload/doctrine.local.php
 
-config/autoload/global.php
->>>>>>> Stashed changes
 
-config/autoload/doctrine.local.php
 
-config/autoload/global.php
-=======
 /.settings/
->>>>>>> origin/master
+
