@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.4.8
 -- http://www.phpmyadmin.net
 --
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `dhtv_user_phone` (
   `id` mediumint(8) NOT NULL,
-  `un_id` mediumint(8) NOT NULL,
+  `un_id` bigint(20) unsigned DEFAULT NULL,
   `phone` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -39,14 +39,14 @@ CREATE TABLE IF NOT EXISTS `dhtv_user_phone` (
 --
 
 CREATE TABLE IF NOT EXISTS `dhtv_weixin_fans` (
-  `fans_id` mediumint(8) NOT NULL,
-  `open_id` varchar(255) NOT NULL,
-  `unid` bigint(20) unsigned DEFAULT NULL,
+  `id` mediumint(8) NOT NULL,
+  `openId` varchar(255) NOT NULL,
+  `un_id` bigint(20) unsigned DEFAULT NULL,
   `subscribe` int(2) DEFAULT NULL,
   `subscribe_time` int(11) NOT NULL,
   `remark` varchar(100) NOT NULL,
-  `groupid` int(4) NOT NULL,
-  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `groupId` int(4) NOT NULL,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -57,11 +57,11 @@ CREATE TABLE IF NOT EXISTS `dhtv_weixin_fans` (
 
 CREATE TABLE IF NOT EXISTS `dhtv_weixin_msg_base` (
   `id` bigint(20) unsigned NOT NULL,
-  `ToUserName` varchar(60) NOT NULL,
-  `FromUserName` varchar(60) NOT NULL,
-  `CreateTime` int(11) unsigned NOT NULL,
-  `MsgType` varchar(20) NOT NULL,
-  `updatetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `toUserName` varchar(60) NOT NULL,
+  `fromUserName` varchar(60) NOT NULL,
+  `createTime` int(11) unsigned NOT NULL,
+  `msgType` varchar(20) NOT NULL,
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -72,8 +72,8 @@ CREATE TABLE IF NOT EXISTS `dhtv_weixin_msg_base` (
 
 CREATE TABLE IF NOT EXISTS `dhtv_weixin_msg_event_menu` (
   `id` bigint(20) unsigned NOT NULL,
-  `EventKey` varchar(120) NOT NULL,
-  `Event` varchar(10) NOT NULL
+  `eventKey` varchar(120) NOT NULL,
+  `event` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -84,9 +84,9 @@ CREATE TABLE IF NOT EXISTS `dhtv_weixin_msg_event_menu` (
 
 CREATE TABLE IF NOT EXISTS `dhtv_weixin_msg_image` (
   `id` bigint(20) unsigned NOT NULL,
-  `PicUrl` varchar(255) NOT NULL,
-  `MediaId` varchar(100) NOT NULL,
-  `MsgId` bigint(20) unsigned NOT NULL
+  `picUrl` varchar(255) NOT NULL,
+  `mediaId` varchar(100) NOT NULL,
+  `msg_id` bigint(20) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -97,8 +97,8 @@ CREATE TABLE IF NOT EXISTS `dhtv_weixin_msg_image` (
 
 CREATE TABLE IF NOT EXISTS `dhtv_weixin_msg_text` (
   `id` bigint(20) unsigned NOT NULL,
-  `Content` varchar(200) NOT NULL,
-  `MsgId` bigint(20) unsigned NOT NULL
+  `content` varchar(200) NOT NULL,
+  `msg_id` bigint(20) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -108,18 +108,18 @@ CREATE TABLE IF NOT EXISTS `dhtv_weixin_msg_text` (
 --
 
 CREATE TABLE IF NOT EXISTS `dhtv_weixin_union` (
-  `un_id` bigint(20) unsigned NOT NULL,
-  `unionid` varchar(60) NOT NULL,
-  `openid` varchar(255) DEFAULT NULL,
+  `id` bigint(20) unsigned NOT NULL,
+  `unionId` varchar(60) NOT NULL,
+  `openId` varchar(255) DEFAULT NULL,
   `nickname` varchar(20) DEFAULT NULL,
   `sex` int(4) DEFAULT NULL,
   `language` varchar(10) DEFAULT NULL,
   `city` varchar(20) DEFAULT NULL,
   `province` varchar(20) DEFAULT NULL,
   `country` varchar(20) DEFAULT NULL,
-  `headimgurl` varchar(200) DEFAULT NULL,
-  `user_id` mediumint(8) unsigned DEFAULT NULL,
-  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `headImgUrl` varchar(200) DEFAULT NULL,
+  `dhtv_user_id` mediumint(8) unsigned DEFAULT NULL,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `realname` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
