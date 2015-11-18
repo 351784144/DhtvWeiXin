@@ -1,5 +1,20 @@
 <?php
 return array(
+    'doctrine' => array(
+        'driver' => array(
+            'Web_entities' => array(
+                'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(__DIR__ . '/../src/Web/Entity')
+            ),
+    
+            'orm_default' => array(
+                'drivers' => array(
+                    'Web\Entity' => 'Web_entities'
+                )
+            )
+        )
+    ),
     'controllers' => array(
         'invokables' => array(
             'Web\Controller\Admin' => 'Web\Controller\AdminController',
