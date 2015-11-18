@@ -2,9 +2,9 @@
 namespace Web\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
- *  @ORM\Table(name="dhtv_weixin_msg_event_menu")
+ *  @ORM\Table(name="dhtv_wechat_msg_event_menu")
  *  */
-class WeiXinMsgEventMenu {
+class WechatMsgEventMenu {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")

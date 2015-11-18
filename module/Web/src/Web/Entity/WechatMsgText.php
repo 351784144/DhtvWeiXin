@@ -2,9 +2,9 @@
 namespace Web\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
- *  @ORM\Table(name="dhtv_weixin_msg_text")
+ *  @ORM\Table(name="dhtv_chat_msg_text")
  *  */
-class WeiXinMsgText {
+class WechatMsgText {
      /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -19,7 +19,7 @@ class WeiXinMsgText {
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="WeiXinMsgBase",inversedBy="texts")
+     * @ORM\ManyToOne(targetEntity="WechatMsgBase",inversedBy="texts")
      * @ORM\JoinColumn(name="msg_id", referencedColumnName="id")
      */
     protected $msg;

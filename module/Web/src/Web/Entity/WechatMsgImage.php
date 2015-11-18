@@ -2,9 +2,9 @@
 namespace Web\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
- *  @ORM\Table(name="dhtv_weixin_msg_image")
+ *  @ORM\Table(name="dhtv_wechat_msg_image")
  *  */
-class WeiXinMsgImage {
+class WechatMsgImage {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -21,7 +21,7 @@ class WeiXinMsgImage {
     
 
     /**
-     * @ORM\ManyToOne(targetEntity="WeiXinMsgBase",inversedBy="images")
+     * @ORM\ManyToOne(targetEntity="WechatMsgBase",inversedBy="images")
      * @ORM\JoinColumn(name="msg_id", referencedColumnName="id")
      */
     protected $msg;

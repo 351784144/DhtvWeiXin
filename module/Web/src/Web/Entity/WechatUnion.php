@@ -2,9 +2,9 @@
 namespace Web\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
- *  @ORM\Table(name="dhtv_weixin_union")
+ *  @ORM\Table(name="dhtv_wechat_union")
  *  */
-class WeiXinUnion {
+class WechatUnion {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")

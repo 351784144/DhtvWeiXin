@@ -2,9 +2,9 @@
 namespace Web\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
- *  @ORM\Table(name="dhtv_weixin_msg_base")
+ *  @ORM\Table(name="dhtv_wechat_msg_base")
  *  */
-class WeiXinMsgBase {
+class WechatMsgBase {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -30,13 +30,13 @@ class WeiXinMsgBase {
     protected $updateTime;
     
     /**
-     * @ORM\OneToMany(targetEntity="WeiXinMsgImage", mappedBy="msg")
+     * @ORM\OneToMany(targetEntity="WechatMsgImage", mappedBy="msg")
      * @var image[]
      **/
     protected $images = null;
     
     /**
-     * @ORM\OneToMany(targetEntity="WeiXinMsgText", mappedBy="msg")
+     * @ORM\OneToMany(targetEntity="WechatMsgText", mappedBy="msg")
      * @var text[]
      **/
     protected $texts = null;

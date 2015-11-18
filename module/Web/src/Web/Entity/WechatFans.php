@@ -2,9 +2,9 @@
 namespace Web\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
- *  @ORM\Table(name="dhtv_weixin_fans")
+ *  @ORM\Table(name="dhtv_wechat_fans")
  *  */
-class WeiXinFans {
+class WechatFans {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -17,7 +17,7 @@ class WeiXinFans {
     protected $openId;
     
     /**
-     * @ORM\ManyToOne(targetEntity="WeiXinUnion")
+     * @ORM\ManyToOne(targetEntity="WechatUnion")
      * @ORM\JoinColumn(name="un_id", referencedColumnName="id")
      */
     protected $union;

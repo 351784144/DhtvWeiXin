@@ -15,7 +15,7 @@ class UserPhone {
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="WeiXinUnion")
+     * @ORM\ManyToOne(targetEntity="WechatUnion")
      * @ORM\JoinColumn(name="un_id", referencedColumnName="id")
      */
     protected $union;
