@@ -2,36 +2,36 @@
 return array(
     'doctrine' => array(
         'driver' => array(
-            'Message_entities' => array(
+            'Keywords_entities' => array(
                 'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
-                'paths' => array(__DIR__ . '/../src/Message/Entity')
+                'paths' => array(__DIR__ . '/../src/Keywords/Entity')
             ),
     
             'orm_default' => array(
                 'drivers' => array(
-                    'Message\Entity' => 'Message_entities'
+                    'Keywords\Entity' => 'Keywords_entities'
                 )
             )
         )
     ),
     'controllers' => array(
         'invokables' => array(
-            'Message\Controller\Processing' => 'Message\Controller\ProcessingController',
+            'Keywords\Controller\Index' => 'Keywords\Controller\IndexController',
         ),
     ),
     'router' => array(
         'routes' => array(
-            'message' => array(
+            'keywords' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     // Change this to something specific to your module
-                    'route'    => '/processing',
+                    'route'    => '/index',
                     'defaults' => array(
                         // Change this value to reflect the namespace in which
                         // the controllers for your module are found
-                        '__NAMESPACE__' => 'Message\Controller',
-                        'controller'    => 'Processing',
+                        '__NAMESPACE__' => 'Keywords\Controller',
+                        'controller'    => 'Index',
                         'action'        => 'index',
                     ),
                 ),
@@ -59,7 +59,7 @@ return array(
     ),
     'view_manager' => array(
         'template_path_stack' => array(
-            'Message' => __DIR__ . '/../view',
+            'Keywords' => __DIR__ . '/../view',
         ),
     ),
 );

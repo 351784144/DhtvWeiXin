@@ -1,5 +1,20 @@
 <?php
 return array(
+    'doctrine' => array(
+        'driver' => array(
+            'Fans_entities' => array(
+                'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(__DIR__ . '/../src/Fans/Entity')
+            ),
+    
+            'orm_default' => array(
+                'drivers' => array(
+                    'Fans\Entity' => 'Fans_entities'
+                )
+            )
+        )
+    ),
     'controllers' => array(
         'invokables' => array(
             'Fans\Controller\Index' => 'Fans\Controller\IndexController',
