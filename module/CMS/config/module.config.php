@@ -1,5 +1,20 @@
 <?php
 return array(
+    'doctrine' => array(
+        'driver' => array(
+            'CMS_entities' => array(
+                'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(__DIR__ . '/../src/CMS/Entity')
+            ),
+    
+            'orm_default' => array(
+                'drivers' => array(
+                    'CMS\Entity' => 'CMS_entities'
+                )
+            )
+        )
+    ),
     'controllers' => array(
         'invokables' => array(
             'CMS\Controller\Index' => 'CMS\Controller\IndexController',
