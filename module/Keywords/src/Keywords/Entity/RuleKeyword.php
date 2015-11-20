@@ -14,7 +14,7 @@ class RuleKeyword {
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="WechatAccount")
+     * @ORM\ManyToOne(targetEntity="Wechat\Entity\WechatAccount")
      * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
      */
     protected $AccountId;

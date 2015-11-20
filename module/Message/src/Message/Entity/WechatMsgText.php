@@ -2,7 +2,7 @@
 namespace Message\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
- *  @ORM\Table(name="dhtv_chat_msg_text")
+ *  @ORM\Table(name="dhtv_wechat_msg_text")
  *  */
 class WechatMsgText {
      /**
