@@ -12,11 +12,8 @@ class WechatMsgText {
      */
     protected $id;
 
-
     /** @ORM\Column(type="string",length=200) */
     protected $content;
-    
-
 
     /**
      * @ORM\ManyToOne(targetEntity="WechatMsgBase",inversedBy="texts")
