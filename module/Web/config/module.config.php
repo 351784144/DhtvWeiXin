@@ -1,6 +1,6 @@
 <?php
 return array(
-    'doctrine' => array(
+    /*'doctrine' => array(
         'driver' => array(
             'Web_entities' => array(
                 'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
@@ -14,7 +14,7 @@ return array(
                 )
             )
         )
-    ),
+    ),*/
     'controllers' => array(
         'invokables' => array(
             'Web\Controller\Admin' => 'Web\Controller\AdminController',

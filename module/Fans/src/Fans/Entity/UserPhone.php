@@ -1,5 +1,5 @@
 <?php
-namespace Web\Entity;
+namespace Fans\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
  *  @ORM\Table(name="dhtv_user_phone")
