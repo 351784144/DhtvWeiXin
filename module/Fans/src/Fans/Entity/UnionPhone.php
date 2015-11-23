@@ -1,7 +1,9 @@
 <?php
 namespace Fans\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/** 
+ * 用户手机号
+ * @ORM\Entity
  *  @ORM\Table(name="dhtv_union_phone")
  *  */
 class UnionPhone {
@@ -15,13 +17,16 @@ class UnionPhone {
 
 
     /**
+     * 关联union表
      * @ORM\ManyToOne(targetEntity="WechatUnion")
      * @ORM\JoinColumn(name="un_id", referencedColumnName="id")
      */
     protected $union;
     
   
-    /** @ORM\Column(type="string",length=50) */
+    /** 
+     * 手机号码
+     * @ORM\Column(type="string",length=50) */
     protected $phone;
  /**
      * @return the $id

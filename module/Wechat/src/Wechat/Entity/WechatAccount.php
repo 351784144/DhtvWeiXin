@@ -1,7 +1,9 @@
 <?php
 namespace Wechat\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/** 
+ * 微信公众号账号表
+ * @ORM\Entity
  *  @ORM\Table(name="dhtv_wechat_account")
  *  */
 class WechatAccount {
@@ -14,40 +16,59 @@ class WechatAccount {
 
 
 
-    /** @ORM\Column(type="string",length=32) */
+    /** @ORM\Column(type="string",length=32) 
+     * 对应微信公众号第三方开发的Token(令牌)
+     * */
     protected $token;
     
-    /** @ORM\Column(type="string") */
+    /** @ORM\Column(type="string") 
+     * 对应微信公众号第三方开发的EncodingAESKey(消息加解密密钥)
+     * */
     protected $encodingaeskey;
     
     /** @ORM\Column(type="smallint") */
     protected $level;
     
-    /** @ORM\Column(type="string",length=30) */
+    /** @ORM\Column(type="string",length=30) 
+     * 公众号名称
+     * */
     protected $name;
     
   
     /** @ORM\Column(type="string",length=60) */
     protected $openId;
     
-    /** @ORM\Column(type="string",length=30) */
+    /** @ORM\Column(type="string",length=30) 
+     * 微信公众号登陆用户名
+     * */
     protected $username;
     
-    /** @ORM\Column(type="string",length=32) */
+    /** @ORM\Column(type="string",length=32) 
+     * 微信公众号登陆密码
+     * */
     protected $password;
     
-    /** @ORM\Column(type="string",length=50) */
+    /** 
+     * 微信公众号AppID(应用ID)
+     * @ORM\Column(type="string",length=50) 
+     * */
     protected $appID;
     
-    /** @ORM\Column(type="string",length=50) */
+    /** 
+     * 微信公众号AppSecret(应用密钥)
+     * @ORM\Column(type="string",length=50) */
     protected $appsecret;
     
-    /** @ORM\Column(type="string",length=120) */
+    /** 
+     * URL(服务器地址)
+     * @ORM\Column(type="string",length=120) */
     protected $subscribeurl;
     
-    /** @ORM\Column(type="string") */
+    /** 
+     * 公众号的全局唯一票据(接口调用时使用)
+     * @ORM\Column(type="string") */
     protected $accessToken;
- /**
+     /**
      * @return the $token
      */
     public function getToken()
@@ -55,7 +76,7 @@ class WechatAccount {
         return $this->token;
     }
 
- /**
+    /**
      * @return the $encodingaeskey
      */
     public function getEncodingaeskey()

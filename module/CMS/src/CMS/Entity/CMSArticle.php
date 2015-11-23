@@ -1,7 +1,9 @@
 <?php
 namespace CMS\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/**
+ *  文章内容表
+ *  @ORM\Entity
  *  @ORM\Table(name="dhtv_cms_article")
  *  */
 class CMSArticle {
@@ -13,46 +15,66 @@ class CMSArticle {
     protected $id;
     
     /**
+     * 所属公众号id,关联到wechataccount
      * @ORM\ManyToOne(targetEntity="Wechat\Entity\WechatAccount")
      * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
      */
     protected $account;
 
     /**
+     * 分类id，关联到cmscategory表
      * @ORM\ManyToOne(targetEntity="CMSCategory")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     protected $category;
     
-    /** @ORM\Column(type="string",length=100) */
+    /** 
+     * 文章标题
+     * @ORM\Column(type="string",length=100) */
     protected $title;
     
-    /** @ORM\Column(type="string",length=100) */
+    /** 
+     * 文章简介
+     * @ORM\Column(type="string",length=100) */
     protected $description;
     
 
-    /** @ORM\Column(type="string",length=1000) */
+    /** 
+     * 文章详细内容
+     * @ORM\Column(type="string",length=1000) */
     protected $content;
     
-    /** @ORM\Column(type="string") */
+    /** 
+     * 缩略图
+     * @ORM\Column(type="string") */
     protected $thumb;
     
-    /** @ORM\Column(type="string") */
+    /** 
+     * 来源
+     * @ORM\Column(type="string") */
     protected $source;
     
-    /** @ORM\Column(type="string",length=50) */
+    /** 
+     * 作者
+     * @ORM\Column(type="string",length=50) */
     protected $author;
     
-    /** @ORM\Column(type="integer") */
+    /** 
+     * 是否显示
+     * @ORM\Column(type="integer") */
     protected $displayorder;
     
-    /** @ORM\Column(type="string",length=500) */
+    /** 
+     * 直接跳转链接
+     * @ORM\Column(type="string",length=500) */
     protected $linkUrl;
     
     /** @ORM\Column(type="integer") */
     protected $createTime;
     
-    /** @ORM\Column(type="integer") */
+    /**
+     * 点击次数
+     *  @ORM\Column(type="integer") */
     protected $click;
  /**
      * @return the $id

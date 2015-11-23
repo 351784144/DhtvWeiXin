@@ -1,7 +1,9 @@
 <?php
 namespace CMS\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/**
+ * CMS分类表
+ *  @ORM\Entity
  *  @ORM\Table(name="dhtv_cms_category")
  *  */
 class CMSCategory {
@@ -14,27 +16,40 @@ class CMSCategory {
 
 
     /**
+     * 所属公众号id,关联到wechataccount
      * @ORM\ManyToOne(targetEntity="Wechat\Entity\WechatAccount")
      * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
      */
     protected $account;
     
-    /** @ORM\Column(type="string",length=50) */
+    /** 
+     * 分类名字
+     * @ORM\Column(type="string",length=50) */
     protected $name;
     
-    /** @ORM\Column(type="integer") */
+    /** 
+     * 上级分类id,（这里是否可以也做一个表外关联，关联自己表）
+     * @ORM\Column(type="integer") */
     protected $parentId;
     
-    /** @ORM\Column(type="smallint") */
+    /** 
+     * 是否显示
+     * @ORM\Column(type="smallint") */
     protected $displayorder;
     
-    /** @ORM\Column(type="smallint") */
+    /** 
+     * 是否可用
+     * @ORM\Column(type="smallint") */
     protected $enabled;
     
-    /** @ORM\Column(type="string",length=100) */
+    /** 
+     * 描述
+     * @ORM\Column(type="string",length=100) */
     protected $description;
     
-    /** @ORM\Column(type="string",length=500) */
+    /** 
+     * 直接跳转链接
+     * @ORM\Column(type="string",length=500) */
     protected $linkUrl;
  /**
      * @return the $account

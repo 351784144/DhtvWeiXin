@@ -1,7 +1,9 @@
 <?php
 namespace Fans\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/** 
+ * 微信公众号粉丝表，同一个用户，在不同公众号下openid不同
+ * @ORM\Entity
  *  @ORM\Table(name="dhtv_wechat_fans")
  *  */
 class WechatFans {
@@ -17,24 +19,35 @@ class WechatFans {
     protected $openId;
     
     /**
+     * union表的id
      * @ORM\ManyToOne(targetEntity="WechatUnion")
      * @ORM\JoinColumn(name="un_id", referencedColumnName="id")
      */
     protected $union;
     
-    /** @ORM\Column(type="integer",nullable=true,length=2) */
+    /** 
+     * 是否关注
+     * @ORM\Column(type="integer",nullable=true,length=2) */
     protected $subscribe;
     
-    /** @ORM\Column(type="integer") */
+    /** 
+     * 关注时间
+     * @ORM\Column(type="integer") */
     protected $subscribeTime;
     
-    /** @ORM\Column(type="string",length=100) */
+    /** 
+     * 备注
+     * @ORM\Column(type="string",length=100) */
     protected $remark;
     
-    /** @ORM\Column(type="integer",length=4) */
+    /** 
+     * 分组，来自微信平台的分组
+     * @ORM\Column(type="integer",length=4) */
     protected $groupId;
     
-    /** @ORM\Column(type="integer") */
+    /** 
+     * 创建时间
+     * @ORM\Column(type="integer") */
     protected $createTime;
  /**
      * @return the $id
