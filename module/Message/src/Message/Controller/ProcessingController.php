@@ -15,6 +15,13 @@ class ProcessingController extends AbstractActionController
 {
     public function indexAction()
     {
+        $wechatmsgtestDao = $this->getServiceLocator()->get('Message\Dao\WechatMsgTextDao');
+        $wechatmsgbaseDao = $this->getServiceLocator()->get('Message\Dao\WechatMsgBaseDao');
+        $objectManager = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+        $wechatmsgbase = $wechatmsgbaseDao->getById(1);
+
+        var_dump($wechatmsgbase);
+        exit;
         return array();
     }
 
