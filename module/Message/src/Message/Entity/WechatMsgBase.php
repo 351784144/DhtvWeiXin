@@ -3,6 +3,7 @@ namespace Message\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
  *  @ORM\Table(name="dhtv_wechat_msg_base")
+ *  @ORM\InheritanceType(value="JOINED")
  *  */
 class WechatMsgBase {
     /**
@@ -28,52 +29,6 @@ class WechatMsgBase {
     
     /** @ORM\Column(type="integer") */
     protected $updateTime;
-    
-    /**
-     * @ORM\OneToMany(targetEntity="WechatMsgImage", mappedBy="msg")
-     * @var image[]
-     **/
-    protected $images = null;
-    
-    /**
-     * @ORM\OneToMany(targetEntity="WechatMsgText", mappedBy="msg")
-     * @var text[]
-     **/
-    protected $texts = null;
-    
-    
- /**
-     * @return the $images
-     */
-    public function getImages()
-    {
-        return $this->images;
-    }
-
- /**
-     * @return the $texts
-     */
-    public function getTexts()
-    {
-        return $this->texts;
-    }
-
- /**
-     * @param multitype:\DH\Entity\image  $images
-     */
-    public function setImages($images)
-    {
-        $this->images = $images;
-    }
-
- /**
-     * @param multitype:\DH\Entity\text  $texts
-     */
-    public function setTexts($texts)
-    {
-        $this->texts = $texts;
-    }
-
  /**
      * @return the $id
      */
@@ -170,6 +125,8 @@ class WechatMsgBase {
         $this->updateTime = $updateTime;
     }
 
+    
+    
  
     
 }

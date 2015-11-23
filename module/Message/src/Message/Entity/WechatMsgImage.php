@@ -4,14 +4,8 @@ use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
  *  @ORM\Table(name="dhtv_wechat_msg_image")
  *  */
-class WechatMsgImage {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     * @ORM\Column(type="bigint")
-     */
-    protected $id;
-
+class WechatMsgImage extends WechatMsgBase{
+ 
 
     /** @ORM\Column(type="string") */
     protected $picUrl;
@@ -20,19 +14,10 @@ class WechatMsgImage {
     protected $mediaId;
     
 
-    /**
-     * @ORM\ManyToOne(targetEntity="WechatMsgBase",inversedBy="images")
-     * @ORM\JoinColumn(name="msg_id", referencedColumnName="id")
+   /**
+     * @ORM\Column(type="string")
      */
-    protected $msg;
- /**
-     * @return the $id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
+    protected $msgId;
  /**
      * @return the $picUrl
      */
@@ -50,19 +35,11 @@ class WechatMsgImage {
     }
 
  /**
-     * @return the $msg
+     * @return the $msgId
      */
-    public function getMsg()
+    public function getMsgId()
     {
-        return $this->msg;
-    }
-
- /**
-     * @param field_type $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
+        return $this->msgId;
     }
 
  /**
@@ -82,13 +59,14 @@ class WechatMsgImage {
     }
 
  /**
-     * @param field_type $msg
+     * @param field_type $msgId
      */
-    public function setMsg($msg)
+    public function setMsgId($msgId)
     {
-        $this->msg = $msg;
+        $this->msgId = $msgId;
     }
 
+ 
     
     
 }

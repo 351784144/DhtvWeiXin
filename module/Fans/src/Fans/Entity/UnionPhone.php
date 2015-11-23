@@ -2,9 +2,9 @@
 namespace Fans\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
- *  @ORM\Table(name="dhtv_user_phone")
+ *  @ORM\Table(name="dhtv_union_phone")
  *  */
-class UserPhone {
+class UnionPhone {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
