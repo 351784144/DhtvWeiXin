@@ -33,7 +33,7 @@ class CMSCategory {
     protected $parentId;
     
     /** 
-     * 是否显示
+     * 顺序
      * @ORM\Column(type="smallint") */
     protected $displayorder;
     

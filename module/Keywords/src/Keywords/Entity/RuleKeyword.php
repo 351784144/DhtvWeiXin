@@ -1,7 +1,9 @@
 <?php
 namespace Keywords\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/**
+ * 关键字回复规则表
+ *  @ORM\Entity
  *  @ORM\Table(name="dhtv_rule_keyword")
  *  */
 class RuleKeyword {
@@ -14,31 +16,44 @@ class RuleKeyword {
 
 
     /**
+     * 所属公众号id,关联到wechataccount
      * @ORM\ManyToOne(targetEntity="Wechat\Entity\WechatAccount")
      * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
      */
     protected $AccountId;
 
 
-    /** @ORM\Column(type="string",length=50) */
+    /** 
+     * 所属功能模块
+     * @ORM\Column(type="string",length=50) */
     protected $module;
 
-    /** @ORM\Column(type="string",length=50) */
+    /** 
+     * 
+     * @ORM\Column(type="string",length=50) */
     protected $name;
 
-    /** @ORM\Column(type="string") */
+    /** 
+     * 关键字
+     * @ORM\Column(type="string") */
     protected $keyword;
 
-    /** @ORM\Column(type="smallint") */
+    /** 
+     * 关键字类型，如图片、文字、坐标、事件。。。
+     * @ORM\Column(type="smallint") */
     protected $type;
 
    
   
-    /** @ORM\Column(type="smallint") */
+    /** 
+     * 顺序
+     * @ORM\Column(type="smallint") */
     protected $displayorder;
     
 
-    /** @ORM\Column(type="smallint") */
+    /** 
+     * 状态
+     * @ORM\Column(type="smallint") */
     protected $status;
  /**
      * @return the $id

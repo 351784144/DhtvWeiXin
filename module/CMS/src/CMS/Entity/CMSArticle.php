@@ -60,7 +60,7 @@ class CMSArticle {
     protected $author;
     
     /** 
-     * 是否显示
+     * 顺序
      * @ORM\Column(type="integer") */
     protected $displayorder;
     

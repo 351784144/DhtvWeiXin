@@ -1,7 +1,9 @@
 <?php
 namespace Keywords\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/**
+ * 文字回复
+ *  @ORM\Entity
  *  @ORM\Table(name="dhtv_text_reply")
  *  */
 class TextReply {
@@ -15,13 +17,16 @@ class TextReply {
 
 
   
-   /**
+    /**
+     * 关键字回复规则id,关联rulekeyword
      * @ORM\ManyToOne(targetEntity="RuleKeyword")
      * @ORM\JoinColumn(name="keyword_id", referencedColumnName="id")
      */
     protected $keywordId;
   
-    /** @ORM\Column(type="string",length=1000) */
+    /** 
+     * 回复内容
+     * @ORM\Column(type="string",length=1000) */
     protected $content;
  /**
      * @return the $id
