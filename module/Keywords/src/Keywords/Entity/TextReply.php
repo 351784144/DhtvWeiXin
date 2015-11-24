@@ -14,9 +14,6 @@ class TextReply {
      */
     protected $id;
 
-
-
-  
     /**
      * 关键字回复规则id,关联rulekeyword
      * @ORM\ManyToOne(targetEntity="RuleKeyword")
