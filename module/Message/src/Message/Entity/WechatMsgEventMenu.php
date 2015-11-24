@@ -1,17 +1,23 @@
 <?php
 namespace Message\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/** 
+ *  微信自定义菜单事件类型消息
+ *  @ORM\Entity
  *  @ORM\Table(name="dhtv_wechat_msg_event_menu")
  *  */
 class WechatMsgEventMenu extends WechatMsgBase{
  
 
 
-    /** @ORM\Column(type="string",length=120) */
+    /** 
+     * 事件KEY值
+     * @ORM\Column(type="string",length=120) */
     protected $eventKey;
     
-    /** @ORM\Column(type="string",length=10) */
+    /** 
+     * 事件类型
+     * @ORM\Column(type="string",length=10) */
     protected $event;
 
 

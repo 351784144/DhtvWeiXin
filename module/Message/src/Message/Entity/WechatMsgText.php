@@ -1,20 +1,26 @@
 <?php
 namespace Message\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/** 
+ *  微信文字消息
+ *  @ORM\Entity
  *  @ORM\Table(name="dhtv_wechat_msg_text")
  *  */
 class WechatMsgText extends WechatMsgBase{
   
 
-    /** @ORM\Column(type="string",length=200) */
+    /** 
+     * 文字内容
+     * @ORM\Column(type="string",length=200) */
     protected $content;
 
     /**
+     * 消息id
      * @ORM\Column(type="string")
      */
     protected $msgId;
- /**
+    
+    /**
      * @return the $content 
      * 
      */
