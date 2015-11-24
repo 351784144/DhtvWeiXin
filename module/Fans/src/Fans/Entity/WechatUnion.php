@@ -1,7 +1,9 @@
 <?php
 namespace Fans\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/** 
+ * 微信联合用户信息表（与粉丝表一对多关系）
+ * @ORM\Entity
  *  @ORM\Table(name="dhtv_wechat_union")
  *  */
 class WechatUnion {
@@ -13,34 +15,52 @@ class WechatUnion {
     protected $id;
 
 
-    /** @ORM\Column(type="string",length=60) */
+    /** @ORM\Column(type="string",length=60) 
+     *  union表的id
+     * */
     protected $unionId;
     
     /** @ORM\Column(type="string",nullable=true) */
     protected $openId;
     
-    /** @ORM\Column(type="string",length=20,nullable=true) */
+    /** 
+     * 昵称
+     * @ORM\Column(type="string",length=20,nullable=true) */
     protected $nickname;
     
-    /** @ORM\Column(type="integer",nullable=true) */
+    /** 
+     * 性别
+     * @ORM\Column(type="integer",nullable=true) */
     protected $sex;
     
-    /** @ORM\Column(type="string",length=10,nullable=true) */
+    /** 
+     * 语言，微信平台上获取
+     * @ORM\Column(type="string",length=10,nullable=true) */
     protected $language;
     
-    /** @ORM\Column(type="string",length=20,nullable=true) */
+    /** 
+     * 城市
+     * @ORM\Column(type="string",length=20,nullable=true) */
     protected $city;
     
-    /** @ORM\Column(type="string",length=20,nullable=true) */
+    /** 
+     * 省
+     * @ORM\Column(type="string",length=20,nullable=true) */
     protected $province;
     
-    /** @ORM\Column(type="string",length=20,nullable=true) */
+    /** 
+     * 国家
+     * @ORM\Column(type="string",length=20,nullable=true) */
     protected $country;
     
-    /** @ORM\Column(type="string",length=200,nullable=true) */
+    /** 
+     * 头像
+     * @ORM\Column(type="string",length=200,nullable=true) */
     protected $headImgUrl;
     
-    /** @ORM\Column(type="integer",name="dhtv_user_id") */
+    /** 
+     * 东海网用户id,用于以后对接东海网用户
+     * @ORM\Column(type="integer",name="dhtv_user_id") */
     protected $dhtvUserId;
     
     /**
@@ -48,7 +68,9 @@ class WechatUnion {
      */
     protected $createTime;
     
-    /** @ORM\Column(type="string",length=50,nullable=true) */
+    /** 
+     * 真实姓名
+     * @ORM\Column(type="string",length=50,nullable=true) */
     protected $realname;
  /**
      * @return the $id

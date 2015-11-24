@@ -1,7 +1,9 @@
 <?php
 namespace Message\Entity;
 use Doctrine\ORM\Mapping as ORM;
-/** @ORM\Entity
+/**
+ *  微信基础消息类
+ *  @ORM\Entity
  *  @ORM\Table(name="dhtv_wechat_msg_base")
  *  @ORM\InheritanceType(value="JOINED")
  *  */
@@ -14,17 +16,25 @@ class WechatMsgBase {
     protected $id;
 
 
-    /** @ORM\Column(type="string",length=60) */
+    /** 
+     * 公众号openid
+     * @ORM\Column(type="string",length=60) */
     protected $toUserName;
     
-    /** @ORM\Column(type="string",length=60) */
+    /** 
+     * 粉丝openid
+     * @ORM\Column(type="string",length=60) */
     protected $fromUserName;
     
 
-    /** @ORM\Column(type="integer") */
+    /** 
+     * 创建时间
+     * @ORM\Column(type="integer") */
     protected $createTime;
     
-    /** @ORM\Column(type="string",length=20) */
+    /** 
+     * 消息类型
+     * @ORM\Column(type="string",length=20) */
     protected $msgType;
     
     /** @ORM\Column(type="integer") */
