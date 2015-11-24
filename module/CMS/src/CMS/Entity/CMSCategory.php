@@ -22,7 +22,10 @@ class CMSCategory {
     /** @ORM\Column(type="string",length=50) */
     protected $name;
     
-    /** @ORM\Column(type="integer") */
+     /**
+     * @ORM\ManyToOne(targetEntity="CMSCategory")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
+     */
     protected $parentId;
     
     /** @ORM\Column(type="smallint") */

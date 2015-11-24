@@ -15,7 +15,9 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        echo 123;
+      
+        var_dump($_POST);
+        exit;
         return array();
     }
 
